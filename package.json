@@ -1,0 +1,12 @@
+{
+  "name": "reacttrainingproject",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "node server/src/index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
