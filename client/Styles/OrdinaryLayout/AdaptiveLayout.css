@@ -74,7 +74,9 @@ input[type="text"]:focus {
 
 input[type="text"]:focus,
 input[type="text"]:hover{
-    box-shadow: inset 5px black;
+    box-shadow:
+            3px 3px red,
+            -1em 0 0.4em olive;
     background-color: #3f066e50;
     transition: 200ms;
     /* Is not so bad */
