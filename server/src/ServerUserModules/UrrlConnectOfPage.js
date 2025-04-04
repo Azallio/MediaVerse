@@ -28,9 +28,9 @@ const mimeTypes = {
     "wasm": "application/wasm"
 }
 
-function renderOfCorrectFile(res, filePath, extName, DirectoryName = '') {
+function renderOfCorrectFile(res, filePath, extName) {
     res.setHeader("Content-Type", mimeTypes[extName], 'utf-8');
-    fs.readFile(path.join(`client/${DirectoryName}/`, filePath), function (err, data) {
+    fs.readFile(path.join('client/', filePath), function (err, data) {
         if (err) {
             res.setHeader("Content-Type", 'text/html');
             res.end(`<h1>Error 404, Page not found!</h1>`);
@@ -44,14 +44,16 @@ function renderOfCorrectFile(res, filePath, extName, DirectoryName = '') {
 
 export function RenderFile(res, filePath) {
     console.log(filePath);
-    const extName = path.extname(filePath)
-    if (extName === ".html") {
-        renderOfCorrectFile(res, filePath, extName, 'Pages');
-    } else if (extName === ".css" || extName === ".js") {
-        renderOfCorrectFile(res, filePath, extName);
-    } else if (extName === ".ico") {
-        renderOfCorrectFile(res, filePath, extName, 'MediaContent/');
-    } else {
+    const extName = path.extname(filePath).toLowerCase()
+    let Permission = false;
+    for (let ext in mimeTypes) {
+        if (extName === ext) {
+            Permission = true;
+        }
+    }
+    if (Permission === true)
+        renderOfCorrectFile(res, filePath, extName)
+    else {
         res.statusCode = 404;
         res.setHeader("Content-Type", 'text/html', 'utf-8');
         res.end(`

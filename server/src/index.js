@@ -13,12 +13,14 @@ server.createServer((req, res) => {
         res.setHeader('location', '/Main');
         res.end();
     }else if (url === '/Main'){
-        RenderFile(res, 'index.html');
-    }else {
+        RenderFile(res, 'Pages/index.html'); 
+    }else if(url === '/Add_movie'){
+        RenderFile(res, 'Pages/Add_movie.html');
+    }
+    else {
         RenderFile(res, url);
     }
 
 }).listen(PORT, () => {
     console.log(`Server started on port ${PORT}`);
 });
-
