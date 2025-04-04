@@ -4,34 +4,54 @@
 <head>
     <meta charset="UTF-8">
     <title>Add movie</title>
-    <link rel="stylesheet" href="/Styles/OrdinaryLayout/AdaptiveLayout.css"> 
+    <link rel="stylesheet" href="/Styles/OrdinaryLayout/AdaptiveLayout.css">
 </head>
 
 <body>
-    <header>
-        <div class="Header">
-            <h1>Add a movie</h1>
-        </div>
-    </header>
-    <main>
-        <form method="POST" id="formWithDataOfFilm">
-            <label for="NameOfFilm">Название тайтла</label>
-            <input type="text" name="NameOfFilm" id="NameOfFilm" required>
+<header>
+    <div class="Header">
+        <h1>Делай!</h1>
+    </div>
+</header>
+<main>
+    <form method="POST" id="formWithDataOfFilm">
+        <label for="NameOfFilm">Название тайтла</label>
+        <input type="text"
+               name="NameOfFilm"
+               id="NameOfFilm"
+               placeholder="Атака Титанов"
+               required>
 
-            <label for="Description">Описание</label>
-            <input type="text" name="Description" id="Description" required>
-            
-            <label for="Category">Категория</label>
-            <input type="text" name="Category" id="Category" required>
+        <label for="Description">Описание</label>
+        <textarea name="Description"
+                  id="Description"
+                  placeholder="Ну кароч, я проебал флешку пока смотрел ... аниме говно."></textarea>
 
-            <label for="ImageOfFilm">Посьтер/картинка к тайтлу</label>
-            <input type="file" name="ImageOfFilm" id="ImageOfFilm" title="Прикрепить">
+        <label for="Category">Категория</label>
+        <input type="text"
+               name="Category"
+               id="Category"
+               placeholder="Аниме/фильм/мульт"
+               required>
 
-            <button type="submit" form="formWithDataOfFilm">
-                Добавить
-            </button>
-        </form>
-    </main>
+        <label for="Duration">Длительность</label>
+        <input type="text"
+               name="Duration"
+               id="Duration"
+               placeholder="Длительность"
+               required>
+
+        <label for="ImageOfTitle" class="helperForFileInput">Посьтер/картинка к тайтлу</label>
+        <input type="file"
+               name="ImageOfTitle"
+               id="ImageOfTitle"
+               accept="image/*">
+
+        <button type="submit" form="formWithDataOfFilm">
+            Добавить
+        </button>
+    </form>
+</main>
 </body>
 
 </html>

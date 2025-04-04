@@ -7,8 +7,7 @@ app.use(express.static('client'))
 app.use(express.static('client/Styles/OrdinaryLayout/'))
 
 app.get('/', (req, res) => {
-    res.setHeader('Location', '/Main')
-    res.end()
+    res.redirect('Main')
 })
 
 app.get('/Main', (req, res) => {
@@ -17,6 +16,9 @@ app.get('/Main', (req, res) => {
 
 app.get('/Add_movie', (req, res) => {
     readFileAsync('Add_movie.html', res)
+})
+app.post('/Add_movie', (req, res) => {
+    console.log('Add_movie send data!')
 })
 
 app.listen(PORT, () => {
