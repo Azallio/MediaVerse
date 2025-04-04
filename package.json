@@ -2,11 +2,24 @@
   "name": "reacttrainingproject",
   "version": "1.0.0",
   "description": "",
+  "keywords": [],
+  "homepage": "https://github.com/Azallio/MediaVerse#readme",
+  "bugs": {
+    "url": "https://github.com/Azallio/MediaVerse/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Azallio/MediaVerse.git"
+  },
+  "license": "ISC",
+  "author": "",
+  "type": "commonjs",
   "main": "index.js",
   "scripts": {
     "dev": "node server/src/index.js"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC"
+  "dependencies": {
+    "express": "^5.1.0"
+  },
+  "devDependencies": {}
 }

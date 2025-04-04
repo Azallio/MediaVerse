@@ -1,21 +1,24 @@
-root{
+root {
     --border-radius: 10px
 }
 
-body{
-    background-color: rgb(30,30,30);
+body {
+    background-color: rgb(30, 30, 30);
 }
-header{
+
+header {
     display: flex;
     justify-content: center;
     align-items: center;
-    &>button{
+
+    &>button {
         height: 52px;
         border-radius: 10px;
         font-weight: 600;
     }
 }
-.Header{
+
+.Header {
     margin-block: 22px;
     width: 512px;
     height: 52px;
@@ -24,17 +27,20 @@ header{
     justify-content: center;
     align-content: center;
     border-radius: 10px;
-    &>h1{
+
+    &>h1 {
         margin: 0;
     }
 }
-main{
+
+main {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
 }
-section{
+
+section {
     display: flex;
     width: 1fr;
     min-width: 386px;
@@ -42,4 +48,34 @@ section{
     height: 256px;
     border-radius: 10px;
     background-color: #3f066e;
+}
+
+form[id="formWithDataOfFilm"] {
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+    flex-direction: column;
+    max-width: 512px;
+    color: rgb(148, 148, 148);
+    font-size: 1.5rem;
+    font-weight: 500;
+}
+
+input,
+input[type="text"],
+input[type="text"]:active,
+input[type="text"]:focus {
+    outline: none;
+    padding: 15px;
+    margin: 5px;
+    border-radius: 10px;
+    border: none;
+}
+
+input[type="text"]:focus,
+input[type="text"]:hover{
+    box-shadow: inset 5px black;
+    background-color: #3f066e50;
+    transition: 200ms;
+    /* Is not so bad */
 }

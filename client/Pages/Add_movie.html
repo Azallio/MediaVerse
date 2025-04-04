@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Add movie</title>
+    <link rel="stylesheet" href="/Styles/OrdinaryLayout/AdaptiveLayout.css"> 
+</head>
+
+<body>
+    <header>
+        <div class="Header">
+            <h1>Add a movie</h1>
+        </div>
+    </header>
+    <main>
+        <form method="POST" id="formWithDataOfFilm">
+            <label for="NameOfFilm">Название тайтла</label>
+            <input type="text" name="NameOfFilm" id="NameOfFilm" required>
+
+            <label for="Description">Описание</label>
+            <input type="text" name="Description" id="Description" required>
+            
+            <label for="Category">Категория</label>
+            <input type="text" name="Category" id="Category" required>
+
+            <label for="ImageOfFilm">Посьтер/картинка к тайтлу</label>
+            <input type="file" name="ImageOfFilm" id="ImageOfFilm" title="Прикрепить">
+
+            <button type="submit" form="formWithDataOfFilm">
+                Добавить
+            </button>
+        </form>
+    </main>
+</body>
+
+</html>

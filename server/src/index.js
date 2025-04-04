@@ -1,26 +1,24 @@
-const server = require('http');
-const {RenderFile} = require('./ServerUserModules/UrrlConnectOfPage');
-const {RenderPostOfMain} = require('./ServerUserModules/RenderInfoOfPage');
 const PORT = 8080;
+const { readFileAsync } = require('./ServerUserModules/UrrlConnectOfPage')
+const express = require('express')
+const app = express()
 
-server.createServer((req, res) => {
-    const url = req.url;
+app.use(express.static('client'))
+app.use(express.static('client/Styles/OrdinaryLayout/'))
 
-    req.method === 'POST' && url === '/Main'? RenderPostOfMain(req, url) : console.log('Данных не обнаруженно');
+app.get('/', (req, res) => {
+    res.setHeader('Location', '/Main')
+    res.end()
+})
 
-    if (url === '/') {
-        res.statusCode = 302;
-        res.setHeader('location', '/Main');
-        res.end();
-    }else if (url === '/Main'){
-        RenderFile(res, 'Pages/index.html'); 
-    }else if(url === '/Add_movie'){
-        RenderFile(res, 'Pages/Add_movie.html');
-    }
-    else {
-        RenderFile(res, url);
-    }
+app.get('/Main', (req, res) => {
+    readFileAsync('index.html', res)
+})
 
-}).listen(PORT, () => {
-    console.log(`Server started on port ${PORT}`);
-});
+app.get('/Add_movie', (req, res) => {
+    readFileAsync('Add_movie.html', res)
+})
+
+app.listen(PORT, () => {
+    console.log(`Example app listening on port ${PORT}`)
+})
